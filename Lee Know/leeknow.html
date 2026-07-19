@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lee Know</title>
+    <link rel="stylesheet" href="/Lee Know/leeknow.css">
+</head>
+<body>
+            <section class="contaner">
+        <div class="card">
+            <img src="/Lee Know/1.jpg" alt="Bang Chan">
+            <h2>ِDemon Version</h2>
+            <p>Mood : Depends</p>
+            <p>Hugs : Denied</p>
+            <p>Price : 10 Souls</p>
+            <button class="buy-btn">BUY</button>
+        </div>
+
+        <div class="card">
+            <img src="/Lee Know/2.jpg" alt="Bang Chan">
+            <h2></h2>
+            <p>Pet Humans : 8</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>Price:  15 Fish </p>
+            <button class="buy-btn">BUY</button>
+        </div>
+
+        <div class="card">
+            <img src="/Lee Know/3.jpg" alt="Bang Chan">
+            <h2> Sleepy Version</h2>
+            <p>Battery : 1%</p>
+            <p>Coffee Needed 6</p>
+            <p> Speaking : Optional</p>
+            <p> Price : One Pilliw</p>
+            <button class="buy-btn">BUY</button>
+        </div>
+
+        <div class="card">
+            <img src="/Lee Know/4.jpg" alt="Bang Chan">
+            <h2>Ice Kimg Version</h2>
+            <p>Temperature :-20c</p>
+            <p> Emotion : Hidden</p>
+            <p> Melts Around Cats</p>
+            <p> Price : 4 Penguins</p>
+            <p></p>
+            <button class="buy-btn">BUY</button>
+        </div>
+
+        <a href="/index.html"><div class="btn">HOME</div></a>
+    </section>
+
+
+
+    <script>
+    const buyButtons = document.querySelectorAll('.buy-btn');
+
+    buyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // ساخت المان پیام
+            const message = document.createElement('div');
+            message.textContent = '✅ سفارش شما ثبت شد!';
+            message.style.cssText = `
+                position: fixed;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #ff1493;
+                color: #fff;
+                padding: 15px 30px;
+                border-radius: 10px;
+                font-size: 18px;
+                font-weight: bold;
+                box-shadow: 0 4px 15px rgba(255, 20, 147, 0.5);
+                z-index: 9999;
+                animation: fadeInUp 0.5s ease;
+            `;
+            document.body.appendChild(message);
+
+            // بعد از ۳ ثانیه پیام محو شود
+            setTimeout(() => {
+                message.style.opacity = '0';
+                message.style.transition = 'opacity 0.5s';
+                setTimeout(() => message.remove(), 500);
+            }, 3000);
+        });
+    });
+</script>
+
+<!-- اضافه کردن انیمیشن (اختیاری) -->
+<style>
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateX(-50%) translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    }
+</style>
+</body>
+</html>

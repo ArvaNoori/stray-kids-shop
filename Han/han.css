@@ -1,0 +1,151 @@
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0d0d0d;
+    color: #fff;
+}
+
+.contaner{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: center;
+    gap: 15px;
+    padding:20px;
+}
+
+.contaner .card{
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px 30px;
+    width: 90%;
+    max-width: 300px;
+    transition: 0.3s;
+    
+}
+
+.contaner .card:hover{
+    border-color: #ff1493;
+    transform: scale(1.02);
+}
+
+.contaner .card img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #ff1493;
+}
+
+.contaner .card .buy-btn{
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+.contaner .card .buy-btn:hover{
+    border-color: #ff1493;
+    color: #ff1493;
+
+}
+
+.contaner .btn{
+    width: 50px;
+    height: auto;
+    border: 1px solid #ff1493;
+    margin-top: 15px;
+
+}
+
+
+
+
+/* ===== ریسپانسیو برای بخش جدید (contaner و card) ===== */
+
+/* تبلت و موبایل بزرگ (عرض کمتر از 992px) */
+@media (max-width: 992px) {
+    .contaner {
+        grid-template-columns: repeat(2, 1fr); /* ۲ ستونه */
+        gap: 20px;
+        padding: 15px;
+        justify-items: center;
+    }
+
+    .contaner .card {
+        width: 100%;
+        max-width: 280px;
+        padding: 15px 20px;
+    }
+
+    .contaner .card img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* موبایل (عرض کمتر از 768px) */
+@media (max-width: 768px) {
+    .contaner {
+        grid-template-columns: repeat(2, 1fr); /* ۲ ستونه */
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .contaner .card {
+        max-width: 250px;
+        padding: 15px;
+    }
+
+    .contaner .card img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .contaner .card .buy-btn {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .contaner .btn {
+        width: 40px;
+    }
+}
+
+/* موبایل خیلی کوچک (عرض کمتر از 480px) */
+@media (max-width: 480px) {
+    .contaner {
+        grid-template-columns: 1fr; /* ۱ ستونه (همه زیر هم) */
+        gap: 20px;
+        padding: 10px;
+        justify-items: center;
+    }
+
+    .contaner .card {
+        max-width: 300px;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .contaner .card img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .contaner .card .buy-btn {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .contaner .btn {
+        width: 45px;
+        padding: 8px;
+    }
+}
